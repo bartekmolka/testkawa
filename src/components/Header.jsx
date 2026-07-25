@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  FaBars, FaXmark
+} from "react-icons/fa6";
 
 export default function Header({ onGoto }) {
   const [open, setOpen] = useState(false);
@@ -44,21 +47,20 @@ export default function Header({ onGoto }) {
       style={{ background: "rgba(10,10,10,0.85)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
       <div
         ref={toggleRef}
-        className={`relative flex flex-col gap-[5px] cursor-pointer min-w-[48px] min-h-[48px] items-center justify-center ${open ? "open" : ""}`}
-        onClick={(e) => {
-          if (e.target.closest("button[data-goto]")) return;
-          setOpen((v) => !v);
-        }}
+        className="relative cursor-pointer min-w-[48px] min-h-[48px] flex items-center justify-center"
+        onClick={() => setOpen((v) => !v)}
       >
-        <span className={`block w-5 h-[2px] rounded-full transition-all duration-300 ${open ? "rotate-45 translate-y-[3.5px]" : ""}`} style={{ background: "#f5d68e" }}></span>
-        <span className={`block w-5 h-[2px] rounded-full transition-all duration-300 ${open ? "opacity-0" : ""}`} style={{ background: "#f5d68e" }}></span>
-        <span className={`block w-5 h-[2px] rounded-full transition-all duration-300 ${open ? "-rotate-45 -translate-y-[3.5px]" : ""}`} style={{ background: "#f5d68e" }}></span>
+        {open ? (
+          <FaXmark className="w-5 h-5" style={{ color: "#f5d68e" }} />
+        ) : (
+          <FaBars className="w-5 h-5" style={{ color: "#f5d68e" }} />
+        )}
 
-        <nav className={`absolute top-full left-0 mt-2 flex flex-col gap-1 p-2 rounded-xl transition-all duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        <nav className={`absolute top-full left-0 mt-2 flex flex-col gap-1 p-2 transition-all duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
           style={{ background: "rgba(20,20,20,0.95)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.08)", minWidth: "200px", transform: open ? "translateY(0)" : "translateY(-8px)" }}>
-          <button data-goto onClick={() => go("#buy")} className="w-full text-left px-4 py-3 rounded-lg text-sm text-muted hover:text-white transition-colors">Zakup Kawy</button>
-          <button data-goto onClick={() => go("#mission")} className="w-full text-left px-4 py-3 rounded-lg text-sm text-muted hover:text-white transition-colors">Informacje o Grupie</button>
-          <button data-goto onClick={() => go("#faq")} className="w-full text-left px-4 py-3 rounded-lg text-sm text-muted hover:text-white transition-colors">FAQ</button>
+          <button data-goto onClick={() => go("#buy")} className="w-full text-left px-4 py-3 text-sm text-muted hover:text-white transition-colors">Zakup Kawy</button>
+          <button data-goto onClick={() => go("#mission")} className="w-full text-left px-4 py-3 text-sm text-muted hover:text-white transition-colors">Informacje o Grupie</button>
+          <button data-goto onClick={() => go("#faq")} className="w-full text-left px-4 py-3 text-sm text-muted hover:text-white transition-colors">FAQ</button>
         </nav>
       </div>
 
