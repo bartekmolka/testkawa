@@ -2,10 +2,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const ITEMS = [
-  { q: "Ile trwa dostawa?", a: "Standardowo wysyłamy w 24h od zamówienia. Paczka dociera zwykle w 1–3 dni robocze." },
-  { q: "Czy mogę zmienić rodzaj kawy w abonamencie?", a: "Tak, formę (ziarnista / mielona) możesz zmienić przed każdą kolejną wysyłką z poziomu grupy." },
-  { q: "Co jeśli chcę więcej niż 4 paczki miesięcznie?", a: "Napisz do nas bezpośrednio — dla większych zamówień ustalamy warunki indywidualnie." },
-  { q: "Jak działa kod z opakowania?", a: "To Twój jednorazowy klucz do grupy Business Beast — bez niego dostęp nie jest możliwy." },
+  { q: "Ile trwa dostawa?", a: "Standardowo wysylamy w 24h od zamowienia. Paczka dociera zwykle w 1–3 dni robocze." },
+  { q: "Czy moge zmienic rodzaj kawy w abonamencie?", a: "Tak, forme (ziarnista / mielona) mozesz zmienic przed kazda kolejna wysylka z poziomu grupy." },
+  { q: "Co jesli chce wiecej niz 4 paczki miesiecznie?", a: "Napisz do nas bezposrednio — dla wiekszych zamowien ustalamy warunki indywidualnie." },
+  { q: "Jak dziala kod z opakowania?", a: "To Twoj jednorazowy klucz do grupy Business Beast — bez niego dostep nie jest mozliwy." },
 ];
 
 export default function Faq() {
@@ -23,7 +23,7 @@ export default function Faq() {
           return (
             <div
               key={item.q}
-              className={`rounded-xl mb-2 overflow-hidden transition-colors duration-300 ${open ? "" : ""}`}
+              className={`mb-2 overflow-hidden transition-colors duration-300 ${open ? "" : ""}`}
               style={{ background: open ? "rgba(200,146,43,0.06)" : "rgba(255,255,255,0.03)", border: `1px solid ${open ? "rgba(200,146,43,0.2)" : "rgba(255,255,255,0.06)"}` }}>
               <button
                 onClick={() => setOpenIdx(open ? null : i)}

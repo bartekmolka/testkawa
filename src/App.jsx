@@ -28,7 +28,7 @@ export default function App() {
       <div className="fixed bottom-0 left-0 right-0 z-40 p-3 md:hidden">
         <button
           onClick={() => setOrderOpen(true)}
-          className="relative w-full h-12 overflow-hidden rounded-xl font-bold text-sm tracking-wider bg-brand text-white shadow-lg shadow-brand/30 active:scale-[0.97] transition-transform duration-150 touch-action-manipulation"
+          className="relative w-full h-12 overflow-hidden font-bold text-sm tracking-wider bg-brand text-white active:scale-[0.97] transition-transform duration-150 touch-action-manipulation"
         >
           <span className="cta-shimmer" />
           <span className="relative z-10">Kup Kawę</span>
