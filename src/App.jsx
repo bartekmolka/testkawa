@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Buy from "./components/Buy";
-import Mission from "./components/Mission";
 import Steps from "./components/Steps";
+import Mission from "./components/Mission";
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 import OrderFlow from "./components/OrderFlow";
@@ -19,9 +18,8 @@ export default function App() {
     <div className="relative min-h-screen overflow-x-hidden max-w-md mx-auto md:max-w-3xl lg:max-w-5xl">
       <Header onGoto={goto} />
       <Hero onGoto={goto} />
-      <Buy onBuy={() => setOrderOpen(true)} />
+      <Steps onBuy={() => setOrderOpen(true)} />
       <Mission />
-      <Steps />
       <Faq />
       <Footer onGoto={goto} />
 
